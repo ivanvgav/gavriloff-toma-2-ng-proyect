@@ -1,7 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MatDialogModule, MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Student } from 'src/app/core/models/student.models';
+
 
 @Component({
   selector: 'app-students-dialog',
@@ -32,3 +33,51 @@ export class StudentDialogComponent {
 //     this.dialogRef.close();
 // };
 }
+
+// Codigo de la documentacion de Angular
+/*
+export interface DialogData {
+  nameControl: string;
+  surnameControl: string;
+}
+
+
+@title Dialog Overview
+
+@Component({
+  selector: 'student-dialog.component',
+  templateUrl: 'student-dialog.component.html',
+})
+export class DialogOverviewExample {
+  nameControl: string;
+  surnameControl: string;
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(StudentDialogComponent, {
+      data: {name: this.nameControl, surname: this.surnameControl},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.nameControl = result;
+    });
+  }
+}
+
+@Component({
+  selector: 'student-dialog.component',
+  templateUrl: 'student-dialog.component.html',
+})
+export class StudentDialogComponent {
+  constructor(
+    public dialogRef: MatDialogRef<StudentDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+  ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
+*/

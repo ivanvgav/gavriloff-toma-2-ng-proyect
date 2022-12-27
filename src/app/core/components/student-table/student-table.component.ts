@@ -44,7 +44,6 @@ export class StudentTableComponent {
       data: student,
     })
 
-    // No se por qué me está tirando error en data
     dialog.afterClosed().subscribe((data) => {
       if (data) {
         this.students = this.students.map((stu) => stu.id === student.id ? {...stu, ...data} : stu)
